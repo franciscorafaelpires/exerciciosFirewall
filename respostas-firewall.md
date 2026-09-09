@@ -310,13 +310,3 @@ sudo iptables -t raw -X
 Em hosts que usam IPv6, repita a limpeza e as politicas com `ip6tables`.
 Esses comandos removem regras ativas e podem expor temporariamente o host;
 aplique-os somente com acesso local ou com um plano de recuperacao.
-
-## Observacoes finais
-
-- Regras do `iptables` sao normalmente perdidas apos a reinicializacao, a
-  menos que sejam salvas por uma ferramenta como `iptables-persistent`.
-- O UFW funciona como uma camada de gerenciamento e gera regras do netfilter.
-- A ordem das regras importa: uma regra anterior pode aceitar ou descartar o
-  pacote antes que uma regra posterior seja avaliada.
-- Em producao, prefira restringir portas por IP, interface e estado de conexao
-  quando isso for compatível com o servico.
